@@ -25,7 +25,7 @@ Same for final user and developer:
 > Because this project was developed for a certain device, you have to choose the same as us when flashing the CPU (Altera DE0 with Cyclone III)
 
 ## Credits
-This work was done as part of a university project.` 
+This work was done as part of a university project.  
   
 Done by **Marcelin Gerardi** and **Maxime Marmont**, 1st-year students in a 2-year university degree in Electrical Engineering and Computer Science (DUT GEII, Génie Electrique et Informatique Industrielle) in IUT Annecy, France.  
   
