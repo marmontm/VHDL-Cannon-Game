@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="FPGA">
+		<CBX_INST_ENTRY INSTANCE_NAME="|FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_9gm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_9gm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FPGA|Projet:Proj|GeneRGB:GeneRGB_Ex1|lpm_mult:Mult0" CBX_FILE_NAME="mult_k4t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FPGA|Projet:Proj|GeneRGB:GeneRGB_Ex1|lpm_mult:Mult1" CBX_FILE_NAME="mult_g4t.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

@@ -1,0 +1,609 @@
+Analysis & Synthesis report for FPGA
+Tue Jan 26 13:52:21 2016
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1|Etat
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for Inferred Entity Instance: Projet:Proj|GeneRGB:GeneRGB_Ex1|lpm_mult:Mult0
+ 16. Parameter Settings for Inferred Entity Instance: Projet:Proj|GeneRGB:GeneRGB_Ex1|lpm_mult:Mult1
+ 17. Parameter Settings for Inferred Entity Instance: Projet:Proj|CalcPosObus:CalcPosObus_Ex1|lpm_divide:Div1
+ 18. Parameter Settings for Inferred Entity Instance: Projet:Proj|CalcPosObus:CalcPosObus_Ex1|lpm_divide:Div0
+ 19. lpm_mult Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "Projet:Proj|GeneRGB:GeneRGB_Ex1"
+ 21. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++------------------------------------+-----------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Jan 26 13:52:21 2016   ;
+; Quartus II Version                 ; 9.1 Build 222 10/21/2009 SJ Web Edition ;
+; Revision Name                      ; FPGA                                    ;
+; Top-level Entity Name              ; FPGA                                    ;
+; Family                             ; Cyclone III                             ;
+; Total logic elements               ; 556                                     ;
+;     Total combinational functions  ; 546                                     ;
+;     Dedicated logic registers      ; 100                                     ;
+; Total registers                    ; 100                                     ;
+; Total pins                         ; 254                                     ;
+; Total virtual pins                 ; 0                                       ;
+; Total memory bits                  ; 0                                       ;
+; Embedded Multiplier 9-bit elements ; 4                                       ;
+; Total PLLs                         ; 0                                       ;
++------------------------------------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C16F484C6       ;                    ;
+; Top-level entity name                                                      ; FPGA               ; FPGA               ;
+; Family name                                                                ; Cyclone III        ; Stratix II         ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; Off                ; Off                ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                          ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+
+; CalcPosCible.vhd                 ; yes             ; User VHDL File               ; C:/Users/Maxime/Documents/SIN/Projet Compilation/CalcPosCible.vhd           ;
+; CalcPosObus.vhd                  ; yes             ; User VHDL File               ; C:/Users/Maxime/Documents/SIN/Projet Compilation/CalcPosObus.vhd            ;
+; Projet_pack.vhd                  ; yes             ; User VHDL File               ; C:/Users/Maxime/Documents/SIN/Projet Compilation/Projet_pack.vhd            ;
+; FPGA.vhd                         ; yes             ; User VHDL File               ; C:/Users/Maxime/Documents/SIN/Projet Compilation/FPGA.vhd                   ;
+; Projet.vhd                       ; yes             ; User VHDL File               ; C:/Users/Maxime/Documents/SIN/Projet Compilation/Projet.vhd                 ;
+; GeneRGB.vhd                      ; yes             ; User VHDL File               ; C:/Users/Maxime/Documents/SIN/Projet Compilation/GeneRGB.vhd                ;
+; CompteurY.vhd                    ; yes             ; User VHDL File               ; C:/Users/Maxime/Documents/SIN/Projet Compilation/CompteurY.vhd              ;
+; CompteurX.vhd                    ; yes             ; User VHDL File               ; C:/Users/Maxime/Documents/SIN/Projet Compilation/CompteurX.vhd              ;
+; CalcAngle.vhd                    ; yes             ; User VHDL File               ; C:/Users/Maxime/Documents/SIN/Projet Compilation/CalcAngle.vhd              ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/altera/91/quartus/libraries/megafunctions/lpm_mult.tdf                   ;
+; db/mult_k4t.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Maxime/Documents/SIN/Projet Compilation/db/mult_k4t.tdf            ;
+; db/mult_g4t.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Maxime/Documents/SIN/Projet Compilation/db/mult_g4t.tdf            ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/91/quartus/libraries/megafunctions/lpm_divide.tdf                 ;
+; db/lpm_divide_9gm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Maxime/Documents/SIN/Projet Compilation/db/lpm_divide_9gm.tdf      ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Maxime/Documents/SIN/Projet Compilation/db/sign_div_unsign_akh.tdf ;
+; db/alt_u_div_v2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Maxime/Documents/SIN/Projet Compilation/db/alt_u_div_v2f.tdf       ;
+; db/add_sub_unc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Maxime/Documents/SIN/Projet Compilation/db/add_sub_unc.tdf         ;
+; db/add_sub_vnc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Maxime/Documents/SIN/Projet Compilation/db/add_sub_vnc.tdf         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                        ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+; Estimated Total logic elements              ; 556                  ;
+;                                             ;                      ;
+; Total combinational functions               ; 546                  ;
+; Logic element usage by number of LUT inputs ;                      ;
+;     -- 4 input functions                    ; 216                  ;
+;     -- 3 input functions                    ; 135                  ;
+;     -- <=2 input functions                  ; 195                  ;
+;                                             ;                      ;
+; Logic elements by mode                      ;                      ;
+;     -- normal mode                          ; 333                  ;
+;     -- arithmetic mode                      ; 213                  ;
+;                                             ;                      ;
+; Total registers                             ; 100                  ;
+;     -- Dedicated logic registers            ; 100                  ;
+;     -- I/O registers                        ; 0                    ;
+;                                             ;                      ;
+; I/O pins                                    ; 254                  ;
+; Embedded Multiplier 9-bit elements          ; 4                    ;
+; Maximum fan-out node                        ; stHorloge50MHz~input ;
+; Maximum fan-out                             ; 97                   ;
+; Total fan-out                               ; 2301                 ;
+; Average fan-out                             ; 1.99                 ;
++---------------------------------------------+----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                     ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                           ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |FPGA                                        ; 546 (67)          ; 100 (0)      ; 0           ; 4            ; 0       ; 2         ; 254  ; 0            ; |FPGA                                                                                                                                         ; work         ;
+;    |Projet:Proj|                             ; 479 (1)           ; 100 (0)      ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |FPGA|Projet:Proj                                                                                                                             ;              ;
+;       |CalcAngle:CalcAngle_Ex1|              ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA|Projet:Proj|CalcAngle:CalcAngle_Ex1                                                                                                     ;              ;
+;       |CalcPosCible:CalcPosCible_Ex1|        ; 34 (34)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA|Projet:Proj|CalcPosCible:CalcPosCible_Ex1                                                                                               ;              ;
+;       |CalcPosObus:CalcPosObus_Ex1|          ; 185 (100)         ; 43 (43)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1                                                                                                 ;              ;
+;          |lpm_divide:Div0|                   ; 38 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1|lpm_divide:Div0                                                                                 ;              ;
+;             |lpm_divide_9gm:auto_generated|  ; 38 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1|lpm_divide:Div0|lpm_divide_9gm:auto_generated                                                   ;              ;
+;                |sign_div_unsign_akh:divider| ; 38 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1|lpm_divide:Div0|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider                       ;              ;
+;                   |alt_u_div_v2f:divider|    ; 38 (38)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1|lpm_divide:Div0|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_v2f:divider ;              ;
+;          |lpm_divide:Div1|                   ; 47 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1|lpm_divide:Div1                                                                                 ;              ;
+;             |lpm_divide_9gm:auto_generated|  ; 47 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1|lpm_divide:Div1|lpm_divide_9gm:auto_generated                                                   ;              ;
+;                |sign_div_unsign_akh:divider| ; 47 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1|lpm_divide:Div1|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider                       ;              ;
+;                   |alt_u_div_v2f:divider|    ; 47 (47)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1|lpm_divide:Div1|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_v2f:divider ;              ;
+;       |CompteurX:CompteurX_Ex1|              ; 20 (20)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA|Projet:Proj|CompteurX:CompteurX_Ex1                                                                                                     ;              ;
+;       |CompteurY:CompteurY_Ex1|              ; 12 (12)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA|Projet:Proj|CompteurY:CompteurY_Ex1                                                                                                     ;              ;
+;       |GeneRGB:GeneRGB_Ex1|                  ; 223 (223)         ; 0 (0)        ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |FPGA|Projet:Proj|GeneRGB:GeneRGB_Ex1                                                                                                         ;              ;
+;          |lpm_mult:Mult0|                    ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |FPGA|Projet:Proj|GeneRGB:GeneRGB_Ex1|lpm_mult:Mult0                                                                                          ;              ;
+;             |mult_k4t:auto_generated|        ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |FPGA|Projet:Proj|GeneRGB:GeneRGB_Ex1|lpm_mult:Mult0|mult_k4t:auto_generated                                                                  ;              ;
+;          |lpm_mult:Mult1|                    ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |FPGA|Projet:Proj|GeneRGB:GeneRGB_Ex1|lpm_mult:Mult1                                                                                          ;              ;
+;             |mult_g4t:auto_generated|        ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |FPGA|Projet:Proj|GeneRGB:GeneRGB_Ex1|lpm_mult:Mult1|mult_g4t:auto_generated                                                                  ;              ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 2           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 4           ;
+; Signed Embedded Multipliers           ; 2           ;
+; Unsigned Embedded Multipliers         ; 0           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------+
+; State Machine - |FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1|Etat ;
++--------------+----------+--------------+------------+--------------+
+; Name         ; Etat.FIN ; Etat.DESCEND ; Etat.MONTE ; Etat.INIT    ;
++--------------+----------+--------------+------------+--------------+
+; Etat.INIT    ; 0        ; 0            ; 0          ; 0            ;
+; Etat.MONTE   ; 0        ; 0            ; 1          ; 1            ;
+; Etat.DESCEND ; 0        ; 1            ; 0          ; 1            ;
+; Etat.FIN     ; 1        ; 0            ; 0          ; 1            ;
++--------------+----------+--------------+------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                               ;
++---------------------------------------------------------+----------------------------------------+
+; Register name                                           ; Reason for Removal                     ;
++---------------------------------------------------------+----------------------------------------+
+; Projet:Proj|CalcPosCible:CalcPosCible_Ex1|iCtChoisir[0] ; Stuck at GND due to stuck port data_in ;
+; Projet:Proj|CalcPosCible:CalcPosCible_Ex1|iCtXcible[0]  ; Stuck at GND due to stuck port data_in ;
+; Projet:Proj|CalcPosObus:CalcPosObus_Ex1|iDepX[4..10]    ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 9                   ;                                        ;
++---------------------------------------------------------+----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                  ;
++---------------------------------------------------------+---------------------------+--------------------------------------------------------+
+; Register name                                           ; Reason for Removal        ; Registers Removed due to This Register                 ;
++---------------------------------------------------------+---------------------------+--------------------------------------------------------+
+; Projet:Proj|CalcPosCible:CalcPosCible_Ex1|iCtChoisir[0] ; Stuck at GND              ; Projet:Proj|CalcPosCible:CalcPosCible_Ex1|iCtXcible[0] ;
+;                                                         ; due to stuck port data_in ;                                                        ;
++---------------------------------------------------------+---------------------------+--------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 100   ;
+; Number of registers using Synchronous Clear  ; 21    ;
+; Number of registers using Synchronous Load   ; 40    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 71    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------+
+; Inverted Register Statistics                               ;
++--------------------------------------------------+---------+
+; Inverted Register                                ; Fan out ;
++--------------------------------------------------+---------+
+; Projet:Proj|CalcAngle:CalcAngle_Ex1|stCpt_int[0] ; 24      ;
+; Total number of inverted registers = 1           ;         ;
++--------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1|iCtImage[1] ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1|iDepY[8]    ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1|iDepY[2]    ;
+; 7:1                ; 21 bits   ; 84 LEs        ; 21 LEs               ; 63 LEs                 ; Yes        ; |FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1|iCtXobus[7] ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1|Etat        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Projet:Proj|GeneRGB:GeneRGB_Ex1|lpm_mult:Mult0 ;
++------------------------------------------------+-------------+----------------------------------+
+; Parameter Name                                 ; Value       ; Type                             ;
++------------------------------------------------+-------------+----------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON          ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS                           ; OFF         ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS                            ; ON          ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF         ; IGNORE_CASCADE                   ;
+; LPM_WIDTHA                                     ; 12          ; Untyped                          ;
+; LPM_WIDTHB                                     ; 12          ; Untyped                          ;
+; LPM_WIDTHP                                     ; 24          ; Untyped                          ;
+; LPM_WIDTHR                                     ; 24          ; Untyped                          ;
+; LPM_WIDTHS                                     ; 1           ; Untyped                          ;
+; LPM_REPRESENTATION                             ; SIGNED      ; Untyped                          ;
+; LPM_PIPELINE                                   ; 0           ; Untyped                          ;
+; LATENCY                                        ; 0           ; Untyped                          ;
+; INPUT_A_IS_CONSTANT                            ; NO          ; Untyped                          ;
+; INPUT_B_IS_CONSTANT                            ; NO          ; Untyped                          ;
+; USE_EAB                                        ; OFF         ; Untyped                          ;
+; MAXIMIZE_SPEED                                 ; 6           ; Untyped                          ;
+; DEVICE_FAMILY                                  ; Cyclone III ; Untyped                          ;
+; CARRY_CHAIN                                    ; MANUAL      ; Untyped                          ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT         ; TECH_MAPPER_APEX20K              ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO        ; Untyped                          ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0           ; Untyped                          ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0           ; Untyped                          ;
+; CBXI_PARAMETER                                 ; mult_k4t    ; Untyped                          ;
+; INPUT_A_FIXED_VALUE                            ; Bx          ; Untyped                          ;
+; INPUT_B_FIXED_VALUE                            ; Bx          ; Untyped                          ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF         ; Untyped                          ;
++------------------------------------------------+-------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Projet:Proj|GeneRGB:GeneRGB_Ex1|lpm_mult:Mult1 ;
++------------------------------------------------+-------------+----------------------------------+
+; Parameter Name                                 ; Value       ; Type                             ;
++------------------------------------------------+-------------+----------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON          ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS                           ; OFF         ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS                            ; ON          ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF         ; IGNORE_CASCADE                   ;
+; LPM_WIDTHA                                     ; 11          ; Untyped                          ;
+; LPM_WIDTHB                                     ; 11          ; Untyped                          ;
+; LPM_WIDTHP                                     ; 22          ; Untyped                          ;
+; LPM_WIDTHR                                     ; 22          ; Untyped                          ;
+; LPM_WIDTHS                                     ; 1           ; Untyped                          ;
+; LPM_REPRESENTATION                             ; SIGNED      ; Untyped                          ;
+; LPM_PIPELINE                                   ; 0           ; Untyped                          ;
+; LATENCY                                        ; 0           ; Untyped                          ;
+; INPUT_A_IS_CONSTANT                            ; NO          ; Untyped                          ;
+; INPUT_B_IS_CONSTANT                            ; NO          ; Untyped                          ;
+; USE_EAB                                        ; OFF         ; Untyped                          ;
+; MAXIMIZE_SPEED                                 ; 6           ; Untyped                          ;
+; DEVICE_FAMILY                                  ; Cyclone III ; Untyped                          ;
+; CARRY_CHAIN                                    ; MANUAL      ; Untyped                          ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT         ; TECH_MAPPER_APEX20K              ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO        ; Untyped                          ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0           ; Untyped                          ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0           ; Untyped                          ;
+; CBXI_PARAMETER                                 ; mult_g4t    ; Untyped                          ;
+; INPUT_A_FIXED_VALUE                            ; Bx          ; Untyped                          ;
+; INPUT_B_FIXED_VALUE                            ; Bx          ; Untyped                          ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF         ; Untyped                          ;
++------------------------------------------------+-------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Projet:Proj|CalcPosObus:CalcPosObus_Ex1|lpm_divide:Div1 ;
++------------------------+----------------+----------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                           ;
++------------------------+----------------+----------------------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                                        ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                        ;
+; CBXI_PARAMETER         ; lpm_divide_9gm ; Untyped                                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                 ;
++------------------------+----------------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Projet:Proj|CalcPosObus:CalcPosObus_Ex1|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                           ;
++------------------------+----------------+----------------------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                                        ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                        ;
+; CBXI_PARAMETER         ; lpm_divide_9gm ; Untyped                                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                 ;
++------------------------+----------------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                         ;
++---------------------------------------+------------------------------------------------+
+; Name                                  ; Value                                          ;
++---------------------------------------+------------------------------------------------+
+; Number of entity instances            ; 2                                              ;
+; Entity Instance                       ; Projet:Proj|GeneRGB:GeneRGB_Ex1|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 12                                             ;
+;     -- LPM_WIDTHB                     ; 12                                             ;
+;     -- LPM_WIDTHP                     ; 24                                             ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                         ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                             ;
+;     -- USE_EAB                        ; OFF                                            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                             ;
+; Entity Instance                       ; Projet:Proj|GeneRGB:GeneRGB_Ex1|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 11                                             ;
+;     -- LPM_WIDTHB                     ; 11                                             ;
+;     -- LPM_WIDTHP                     ; 22                                             ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                         ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                             ;
+;     -- USE_EAB                        ; OFF                                            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                             ;
++---------------------------------------+------------------------------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "Projet:Proj|GeneRGB:GeneRGB_Ex1" ;
++---------------+-------+----------+--------------------------+
+; Port          ; Type  ; Severity ; Details                  ;
++---------------+-------+----------+--------------------------+
+; iycible[8..6] ; Input ; Info     ; Stuck at GND             ;
+; iycible[4..2] ; Input ; Info     ; Stuck at GND             ;
+; iycible[9]    ; Input ; Info     ; Stuck at VCC             ;
+; iycible[5]    ; Input ; Info     ; Stuck at VCC             ;
+; iycible[1]    ; Input ; Info     ; Stuck at VCC             ;
+; iycible[0]    ; Input ; Info     ; Stuck at GND             ;
++---------------+-------+----------+--------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Tue Jan 26 13:52:10 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA_Proj -c FPGA
+Info: Found 2 design units, including 1 entities, in source file calcposcible.vhd
+    Info: Found design unit 1: CalcPosCible-CalcPosCible_arch
+    Info: Found entity 1: CalcPosCible
+Info: Found 2 design units, including 1 entities, in source file calcposobus.vhd
+    Info: Found design unit 1: CalcPosObus-CalcPosObus_arch
+    Info: Found entity 1: CalcPosObus
+Info: Found 1 design units, including 0 entities, in source file projet_pack.vhd
+    Info: Found design unit 1: Projet_pack
+Info: Found 2 design units, including 1 entities, in source file fpga.vhd
+    Info: Found design unit 1: FPGA-FPGA_arch
+    Info: Found entity 1: FPGA
+Info: Found 2 design units, including 1 entities, in source file projet.vhd
+    Info: Found design unit 1: Projet-Projet_arch
+    Info: Found entity 1: Projet
+Info: Found 2 design units, including 1 entities, in source file genergb.vhd
+    Info: Found design unit 1: GeneRGB-GeneRGB_arch
+    Info: Found entity 1: GeneRGB
+Info: Found 2 design units, including 1 entities, in source file compteury.vhd
+    Info: Found design unit 1: CompteurY-CompteurY_arch
+    Info: Found entity 1: CompteurY
+Info: Found 2 design units, including 1 entities, in source file compteurx.vhd
+    Info: Found design unit 1: CompteurX-CompteurX_arch
+    Info: Found entity 1: CompteurX
+Info: Found 2 design units, including 1 entities, in source file calcangle.vhd
+    Info: Found design unit 1: CalcAngle-CalcAngle_arch
+    Info: Found entity 1: CalcAngle
+Info: Elaborating entity "FPGA" for the top level hierarchy
+Info: Elaborating entity "Projet" for hierarchy "Projet:Proj"
+Warning (10873): Using initial value X (don't care) for net "stv8LEDG[7..5]" at Projet.vhd(23)
+Warning (10873): Using initial value X (don't care) for net "stv8LEDG[2..0]" at Projet.vhd(23)
+Info: Elaborating entity "CompteurX" for hierarchy "Projet:Proj|CompteurX:CompteurX_Ex1"
+Info: Elaborating entity "CompteurY" for hierarchy "Projet:Proj|CompteurY:CompteurY_Ex1"
+Info: Elaborating entity "GeneRGB" for hierarchy "Projet:Proj|GeneRGB:GeneRGB_Ex1"
+Info: Elaborating entity "CalcPosObus" for hierarchy "Projet:Proj|CalcPosObus:CalcPosObus_Ex1"
+Info: Elaborating entity "CalcPosCible" for hierarchy "Projet:Proj|CalcPosCible:CalcPosCible_Ex1"
+Info: Elaborating entity "CalcAngle" for hierarchy "Projet:Proj|CalcAngle:CalcAngle_Ex1"
+Info: Inferred 4 megafunctions from design logic
+    Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "Projet:Proj|GeneRGB:GeneRGB_Ex1|Mult0"
+    Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "Projet:Proj|GeneRGB:GeneRGB_Ex1|Mult1"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Projet:Proj|CalcPosObus:CalcPosObus_Ex1|Div1"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Projet:Proj|CalcPosObus:CalcPosObus_Ex1|Div0"
+Info: Elaborated megafunction instantiation "Projet:Proj|GeneRGB:GeneRGB_Ex1|lpm_mult:Mult0"
+Info: Instantiated megafunction "Projet:Proj|GeneRGB:GeneRGB_Ex1|lpm_mult:Mult0" with the following parameter:
+    Info: Parameter "LPM_WIDTHA" = "12"
+    Info: Parameter "LPM_WIDTHB" = "12"
+    Info: Parameter "LPM_WIDTHP" = "24"
+    Info: Parameter "LPM_WIDTHR" = "24"
+    Info: Parameter "LPM_WIDTHS" = "1"
+    Info: Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info: Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info: Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info: Parameter "MAXIMIZE_SPEED" = "6"
+Info: Found 1 design units, including 1 entities, in source file db/mult_k4t.tdf
+    Info: Found entity 1: mult_k4t
+Info: Elaborated megafunction instantiation "Projet:Proj|GeneRGB:GeneRGB_Ex1|lpm_mult:Mult1"
+Info: Instantiated megafunction "Projet:Proj|GeneRGB:GeneRGB_Ex1|lpm_mult:Mult1" with the following parameter:
+    Info: Parameter "LPM_WIDTHA" = "11"
+    Info: Parameter "LPM_WIDTHB" = "11"
+    Info: Parameter "LPM_WIDTHP" = "22"
+    Info: Parameter "LPM_WIDTHR" = "22"
+    Info: Parameter "LPM_WIDTHS" = "1"
+    Info: Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info: Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info: Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info: Parameter "MAXIMIZE_SPEED" = "6"
+Info: Found 1 design units, including 1 entities, in source file db/mult_g4t.tdf
+    Info: Found entity 1: mult_g4t
+Info: Elaborated megafunction instantiation "Projet:Proj|CalcPosObus:CalcPosObus_Ex1|lpm_divide:Div1"
+Info: Instantiated megafunction "Projet:Proj|CalcPosObus:CalcPosObus_Ex1|lpm_divide:Div1" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "7"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_9gm.tdf
+    Info: Found entity 1: lpm_divide_9gm
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
+    Info: Found entity 1: sign_div_unsign_akh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_v2f.tdf
+    Info: Found entity 1: alt_u_div_v2f
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_unc.tdf
+    Info: Found entity 1: add_sub_unc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_vnc.tdf
+    Info: Found entity 1: add_sub_vnc
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "stv10LEDG[0]" is stuck at GND
+    Warning (13410): Pin "stv10LEDG[1]" is stuck at GND
+    Warning (13410): Pin "stv10LEDG[2]" is stuck at GND
+    Warning (13410): Pin "stv10LEDG[5]" is stuck at GND
+    Warning (13410): Pin "stv10LEDG[6]" is stuck at GND
+    Warning (13410): Pin "stv10LEDG[7]" is stuck at GND
+Info: Implemented 814 device resources after synthesis - the final resource count might be different
+    Info: Implemented 197 input pins
+    Info: Implemented 57 output pins
+    Info: Implemented 556 logic cells
+    Info: Implemented 4 DSP elements
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 241 megabytes
+    Info: Processing ended: Tue Jan 26 13:52:21 2016
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:12
+
+

@@ -1,0 +1,7 @@
+
+State Machine - |FPGA|Projet:Proj|CalcPosObus:CalcPosObus_Ex1|Etat
+Name Etat.FIN Etat.DESCEND Etat.MONTE Etat.INIT 
+Etat.INIT 0 0 0 0 
+Etat.MONTE 0 0 1 1 
+Etat.DESCEND 0 1 0 1 
+Etat.FIN 1 0 0 1 

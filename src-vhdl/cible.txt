@@ -1,0 +1,42 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use work.Projet_pack.all;
+
+entity GeneRGB is 
+	port 
+	(	signal iX		: in integer range 0 to iXABCD;
+  		signal iY		: in integer range 0 to iYABCD;
+		signal iYCarre	: in integer range 0 to iYABCD;
+        signal stR		: out std_logic;
+        signal stG		: out std_logic;
+        signal stB		: out std_logic
+	);
+end GeneRGB;
+
+architecture GeneRGB_arch of GeneRGB is																																																								--Gerardi
+	signal stAffichable	: std_logic;
+begin
+	stAffichable <= '1' when (iX > iXAB) and (iX < iXABC) and (iY > iYAB) and (iY < iYABC)
+		else 		'0';
+		
+	--carre vert qui descend	
+	stG	<=	'0' when (stAffichable = '0')
+		else'1' when	( ((iX - iXcarre) * (iX - iXcarre)) + ((iY - iYcarre) * (iY - iYcarre)) <= 500
+						)
+		else'0';
+
+	stR <=	'0' when (stAffichable = '0')
+		else'1' when	( ((iX - iXcarre) * (iX - iXcarre)) + ((iY - iYcarre) * (iY - iYcarre)) <= 4000 and 
+						  ((iX - iXcarre) * (iX - iXcarre)) + ((iY - iYcarre) * (iY - iYcarre)) >= 2000 
+						)
+		else '1' when (((iX - iXcarre) * (iX - iXcarre)) + ((iY - iYcarre) * (iY - iYcarre)) <= 500)
+		else'0';
+		
+		
+		stB	<=	'0' when (stAffichable = '0')
+		else'1' when	( ((iX - iXcarre) * (iX - iXcarre)) + ((iY - iYcarre) * (iY - iYcarre)) <= 2000  
+						  
+						)
+		else'0';
+
+end GeneRGB_arch;

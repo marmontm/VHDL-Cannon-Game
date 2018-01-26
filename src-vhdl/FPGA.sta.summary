@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'stHorloge50MHz'
+Slack : -8.979
+TNS   : -284.795
+
+Type  : Slow 1200mV 85C Model Setup 'stv3KEY[2]'
+Slack : -0.173
+TNS   : -0.665
+
+Type  : Slow 1200mV 85C Model Hold 'stHorloge50MHz'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'stv3KEY[2]'
+Slack : 0.377
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'stHorloge50MHz'
+Slack : -3.000
+TNS   : -99.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'stv3KEY[2]'
+Slack : -3.000
+TNS   : -7.000
+
+Type  : Slow 1200mV 0C Model Setup 'stHorloge50MHz'
+Slack : -7.947
+TNS   : -246.589
+
+Type  : Slow 1200mV 0C Model Setup 'stv3KEY[2]'
+Slack : -0.046
+TNS   : -0.149
+
+Type  : Slow 1200mV 0C Model Hold 'stHorloge50MHz'
+Slack : 0.292
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'stv3KEY[2]'
+Slack : 0.330
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'stHorloge50MHz'
+Slack : -3.000
+TNS   : -99.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'stv3KEY[2]'
+Slack : -3.000
+TNS   : -7.000
+
+Type  : Fast 1200mV 0C Model Setup 'stHorloge50MHz'
+Slack : -4.520
+TNS   : -117.271
+
+Type  : Fast 1200mV 0C Model Setup 'stv3KEY[2]'
+Slack : 0.344
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'stHorloge50MHz'
+Slack : 0.168
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'stv3KEY[2]'
+Slack : 0.199
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'stHorloge50MHz'
+Slack : -3.000
+TNS   : -104.320
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'stv3KEY[2]'
+Slack : -3.000
+TNS   : -7.636
+
+------------------------------------------------------------
